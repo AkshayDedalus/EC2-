@@ -1,1 +1,14 @@
-sdchjnsdnchjsdncsndcnjsdnkcsdkncnksdcn
+#!/bin/bash
+
+# Define the output directory and log file name
+OUTPUT_DIR="/path/to/output/directory"
+LOG_FILE="system_logs_$(date +'%Y%m%d%H%M%S').tar.gz"
+
+# Create the output directory if it doesn't exist
+mkdir -p "$OUTPUT_DIR"
+
+# Collect the logs and compress them into a tarball
+tar -czvf "$OUTPUT_DIR/$LOG_FILE" /var/log/*
+
+# Confirm the action
+echo "Logs have been collected and saved to $OUTPUT_DIR/$LOG_FILE"
